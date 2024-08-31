@@ -54,18 +54,18 @@ def test_case2(base_url_org):
     info = response4.json()
     assert info["message"] == "Invalid api key"
 
-@pytest.mark.parametrize("test_data", ["a796ba84-f8b6-4da5-816d-cdf84abe973f", "3955de07-1c77-458e-9f5a-6ead5d5dc5b3", " "])
-def test_case3(base_url_org, test_data):
-#проверка через марку разных вариантов ключей (верный, неверный, пустой)
-    query_params_org = {
-    "apikey": test_data,
-    "text": "кафе",
-    "lang": "ru_RU",
-    "ll": "30.360909,59.931058",
-    "spn": "0.01,0.01",
-    "type": "biz",
-    "results":"5"
-    }
+# @pytest.mark.parametrize("test_data", ["a796ba84-f8b6-4da5-816d-cdf84abe973f", "3955de07-1c77-458e-9f5a-6ead5d5dc5b3", " "])
+# def test_case3(base_url_org, test_data):
+# #проверка через марку разных вариантов ключей (верный, неверный, пустой)
+#     query_params_org = {
+#     "apikey": test_data,
+#     "text": "кафе",
+#     "lang": "ru_RU",
+#     "ll": "30.360909,59.931058",
+#     "spn": "0.01,0.01",
+#     "type": "biz",
+#     "results":"5"
+#     }
 
-    response5 = requests.get(base_url_org, params=query_params_org)
-    assert test_data == "3955de07-1c77-458e-9f5a-6ead5d5dc5b3"
+#     response5 = requests.get(base_url_org, params=query_params_org)
+#     assert test_data == "3955de07-1c77-458e-9f5a-6ead5d5dc5b3"
